@@ -26,8 +26,23 @@ public class ATM {
 	public boolean depositMoney(long accountNumber, double amountToDeposit) {
 		if (bankAccounts.containsKey(accountNumber)==false) {
 			return false;
-		}else {
+		} else if (amountToDeposit <0){
+			return false;
+		}
+			else {
 			bankAccounts.replace (accountNumber, bankAccounts.get(accountNumber)+amountToDeposit);
+			return true;
+		}
+	}
+	public boolean withdrawMoney (long accountNumber, double amountToWithdraw) {
+		if (bankAccounts.containsKey(accountNumber)==false) {
+			return false;
+		}else if (amountToWithdraw<0){
+			return false;
+		}else if (amountToWithdraw>bankAccounts.get(accountNumber)){
+			return false;
+		}else {
+			bankAccounts.replace (accountNumber, bankAccounts.get(accountNumber)-amountToWithdraw);
 			return true;
 		}
 	}

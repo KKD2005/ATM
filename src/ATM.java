@@ -10,5 +10,18 @@ public class ATM {
 	public void openAccount (long accountNumber, double initialDeposit) {
 		bankAccounts.put (accountNumber, initialDeposit);
 	}
+	public void closeAccount (long accountNumber) {
+		Double money = bankAccounts.get (accountNumber);
+		if (money!=null) {
+			bankAccounts.remove (accountNumber, 0);
+		}
+	}
+	public double checkBalance(long accountNumber) {
+		Double money = bankAccounts.get (accountNumber);
+		if (money!=null) {
+			return money;
+		}
+		return 0.0;
+	}
 	
 }

@@ -23,5 +23,13 @@ public class ATM {
 		}
 		return 0.0;
 	}
+	public boolean depositMoney(long accountNumber, double amountToDeposit) {
+		if (bankAccounts.containsKey(accountNumber)==false) {
+			return false;
+		}else {
+			bankAccounts.replace (accountNumber, bankAccounts.get(accountNumber)+amountToDeposit);
+			return true;
+		}
+	}
 	
 }

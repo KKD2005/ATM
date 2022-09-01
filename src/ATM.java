@@ -19,7 +19,7 @@ public class ATM {
 	public double checkBalance(long accountNumber) {
 		Double money = bankAccounts.get (accountNumber);
 		if (money!=null) {
-			return money;
+			return Double.parseDouble(String.format(("%.02f"), money));
 		}
 		return 0.0;
 	}
@@ -46,5 +46,7 @@ public class ATM {
 			return true;
 		}
 	}
+	
+	
 	
 }

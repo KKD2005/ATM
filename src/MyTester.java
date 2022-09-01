@@ -16,7 +16,7 @@ public class MyTester {
 		citi.closeAccount(4);
 		System.out.println(citi.checkBalance(1)); // Should be 100.0
 		System.out.println(citi.checkBalance(2)); //Should be 0.0
-		System.out.println(citi.checkBalance(3)); // Should be 0.0
+		System.out.println(citi.checkBalance(3)); // Should be 300.0
 		System.out.println(citi.checkBalance(4)); //Should be 0.0
 		System.out.println (citi.depositMoney(1, 1));
 		System.out.println (citi.depositMoney(2, 2));

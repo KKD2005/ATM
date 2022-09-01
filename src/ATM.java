@@ -12,8 +12,8 @@ public class ATM {
 	}
 	public void closeAccount (long accountNumber) {
 		Double money = bankAccounts.get (accountNumber);
-		if (money!=null&& money>-0.005&&money<0.005) {
-			bankAccounts.remove (accountNumber);
+		if (money!=null) {
+			bankAccounts.remove (accountNumber,0.0);
 		}
 	}
 	public double checkBalance(long accountNumber) {
@@ -30,7 +30,7 @@ public class ATM {
 			return false;
 		}
 			else {
-			bankAccounts.replace (accountNumber, bankAccounts.get(accountNumber)+amountToDeposit);
+			bankAccounts.replace (accountNumber, Double.parseDouble(String.format(("%.02f"),bankAccounts.get(accountNumber)+amountToDeposit)));
 			return true;
 		}
 	}
@@ -42,7 +42,7 @@ public class ATM {
 		}else if (amountToWithdraw>bankAccounts.get(accountNumber)){
 			return false;
 		}else {
-			bankAccounts.replace (accountNumber, bankAccounts.get(accountNumber)-amountToWithdraw);
+			bankAccounts.replace (accountNumber,  Double.parseDouble(String.format(("%.02f"),bankAccounts.get(accountNumber)-amountToWithdraw)));
 			return true;
 		}
 	}
